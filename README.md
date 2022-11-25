@@ -7,3 +7,5 @@
 Выполните последовательно команды, находясь в директории с Dockerfile: "docker build -t telebot ." и "docker run --name telebot --restart="always" -d telebot"
 
 Укажите в файле script.sh вашу директорию с месторасположением и добавьте скрипт в cron на выполнение каждые 2 часа, например: 0 */2 * * * /home/dockerbot/script.sh
+
+GOOD LUCK!

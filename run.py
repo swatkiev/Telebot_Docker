@@ -3,9 +3,9 @@ import telebot
 
 PRIVAT_API = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
 
-response = requests.get(PRIVAT_API).json()[0]
+response = requests.get(PRIVAT_API).json()[1]
 
-response1 = requests.get(PRIVAT_API).json()[1]
+response1 = requests.get(PRIVAT_API).json()[0]
 
 BOT_TOKEN = 'PUT HERE YOUR TOKEN FROM BOT_FATHER'
 

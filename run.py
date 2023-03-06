@@ -26,22 +26,22 @@ def hello_handler(message):
 
 @bot.message_handler(content_types=['text'])
 def handler_text(message):
-    text = message.text
+    text = message.text.lower()
     print('Text from user - ' , text)
 
-    if text == 'Купить доллары':
+    if text == 'купить доллары':
        msg = bot.send_message(message.chat.id , 'Введите сумму для покупки в $ (только цифры)')
        bot.register_next_step_handler(msg , usd , type_="sale")
-    elif text == 'Продать доллары':
+    elif text == 'продать доллары':
        msg = bot.send_message(message.chat.id , 'Введите сумму для продажи в $ (только цифры)')
        bot.register_next_step_handler(msg , usd , type_="buy")
-    elif text == 'Купить евро':
+    elif text == 'купить евро':
         msg = bot.send_message(message.chat.id, 'Введите сумму для покупки в € (только цифры)')
         bot.register_next_step_handler(msg, eur, type_="sale")
-    elif text == 'Продать евро':
+    elif text == 'продать евро':
         msg = bot.send_message(message.chat.id, 'Введите сумму для продажи в € (только цифры)')
         bot.register_next_step_handler(msg, eur, type_="buy")
-    elif text == 'Пока':
+    elif text == 'пока':
        msg = bot.send_message(message.chat.id , 'Спасибо за обращение!')
     else:
        msg = bot.send_message(message.chat.id, 'Я Вас не понял, пожалуйста уточните свое обращение! Для управления используйте следующие команды: "/start" "Купить доллары" "Продать доллары" "Купить евро" "Продать евро" "Пока"')
